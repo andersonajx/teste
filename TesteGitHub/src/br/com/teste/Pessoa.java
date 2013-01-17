@@ -1,10 +1,16 @@
 package br.com.teste;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import br.com.teste.command.Command;
+import br.com.teste.listener.PessoaListener;
 
 public class Pessoa {
 
 	private String nome;
+	
+	private List<PessoaListener> listeners = new LinkedList<>();
 	
 	private Pessoa(String nome) {
 		this.nome = nome;
@@ -17,8 +23,22 @@ public class Pessoa {
 		return new Pessoa(nome);
 	}
 	
+	public void addPessoaListener(PessoaListener listener) {
+		if (listener == null) {
+			throw new NullPointerException("PessoaListener nao pode ser nula");
+		}
+		listeners.add(listener);
+	}
+	
 	public void executar(Command<Pessoa> command) {
 		command.execute(this);
+		firePessoaListener();
+	}
+	
+	private void firePessoaListener() {
+		for (PessoaListener listener : listeners) {
+			listener.aoExecutar(this);
+		}
 	}
 	
 	public String getNome() {
