@@ -17,11 +17,7 @@ public class Pessoa {
 		return new Pessoa(nome);
 	}
 	
-	public void escreverNome(Command<Pessoa> command) {
-		command.execute(this);
-	}
-	
-	public void inverterNome(Command<Pessoa> command) {
+	public void executar(Command<Pessoa> command) {
 		command.execute(this);
 	}
 	
