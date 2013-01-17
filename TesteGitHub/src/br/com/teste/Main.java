@@ -1,9 +1,15 @@
 package br.com.teste;
 
+import br.com.teste.command.EscritaCommand;
+import br.com.teste.command.InverterNomeCommand;
+
 public final class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Teste");
+		Pessoa pessoa = Pessoa.newInstance("Fulano da Silva");
+		pessoa.escreverNome(new EscritaCommand());
+		pessoa.inverterNome(new InverterNomeCommand());
+		pessoa.escreverNome(new EscritaCommand());
 	}
 
 }
