@@ -11,6 +11,9 @@ public class Pessoa {
 	}
 	
 	public static Pessoa newInstance(String nome) {
+		if (nome == null) {
+			throw new NullPointerException("Nome nao pode ser nulo");
+		}
 		return new Pessoa(nome);
 	}
 	
