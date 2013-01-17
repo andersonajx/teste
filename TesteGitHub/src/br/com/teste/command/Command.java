@@ -1,4 +1,4 @@
-package br.com.teste;
+package br.com.teste.command;
 
 public interface Command<T> {
 
