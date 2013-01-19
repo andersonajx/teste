@@ -10,9 +10,9 @@ public final class Main {
 		Pessoa pessoa = Pessoa.newInstance("Fulano da Silva");
 		pessoa.addPessoaListener(new EscritaNomePessoaListener());
 
-		pessoa.escreverNome(new EscritaCommand());
-		pessoa.inverterNome(new InverterNomeCommand());
-		pessoa.escreverNome(new EscritaCommand());
+		pessoa.executar(new EscritaCommand());
+		pessoa.executar(new InverterNomeCommand());
+		pessoa.executar(new EscritaCommand());
 
 		pessoa.setNome("Sicrano de Oliveira");
 	}
