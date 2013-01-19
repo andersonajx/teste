@@ -1,6 +1,6 @@
 package br.com.teste.listener;
 
-import br.com.teste.Pessoa;
+import br.com.teste.model.Pessoa;
 
 public interface PessoaListener {
 

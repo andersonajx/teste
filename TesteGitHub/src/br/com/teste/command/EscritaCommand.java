@@ -1,6 +1,6 @@
 package br.com.teste.command;
 
-import br.com.teste.Pessoa;
+import br.com.teste.model.Pessoa;
 
 public class EscritaCommand implements Command<Pessoa> {
 

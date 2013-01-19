@@ -1,10 +1,11 @@
-package br.com.teste;
+package br.com.teste.model;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import br.com.teste.command.Command;
 import br.com.teste.listener.PessoaListener;
+import br.com.teste.utils.CheckNotNull;
 
 public class Pessoa {
 
@@ -17,6 +18,7 @@ public class Pessoa {
 	}
 
 	public void addPessoaListener(PessoaListener listener) {
+		CheckNotNull.check(listener, "Listener nao pode ser nulo");
 		listeners.add(listener);
 	}
 

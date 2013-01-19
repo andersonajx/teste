@@ -3,6 +3,7 @@ package br.com.teste;
 import br.com.teste.command.EscritaCommand;
 import br.com.teste.command.InverterNomeCommand;
 import br.com.teste.listener.EscritaNomePessoaListener;
+import br.com.teste.model.Pessoa;
 
 public final class Main {
 
