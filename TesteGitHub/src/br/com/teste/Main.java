@@ -16,6 +16,10 @@ public final class Main {
 		pessoa.executar(new EscritaCommand());
 
 		pessoa.setNome("Sicrano de Oliveira");
+		pessoa.setNome("Beltrano de Almeida");
+		pessoa.setNome("Sei la da Silva");
+		pessoa.setNome("Putz Esqueci meu Nome");
+
 	}
 
 }
