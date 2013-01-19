@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.com.teste.command.Command;
 import br.com.teste.listener.PessoaListener;
+import br.com.teste.utils.CheckArguments;
 import br.com.teste.utils.CheckNotNull;
 
 public class Pessoa {
@@ -29,7 +30,13 @@ public class Pessoa {
 	}
 
 	public static Pessoa newInstance(String nome) {
+		validar(nome);
 		return new Pessoa(nome);
+	}
+
+	private static void validar(String nome) {
+		CheckNotNull.check(nome, "Nome nao pode ser nulo");
+		CheckArguments.check(!nome.isEmpty(), "Nome nao pode ser vazio");
 	}
 
 	public void executar(Command<Pessoa> command) {
@@ -41,6 +48,7 @@ public class Pessoa {
 	}
 
 	public void setNome(String nome) {
+		validar(nome);
 		this.nome = nome;
 		firePessoaListener();
 	}
